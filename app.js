@@ -62,10 +62,10 @@ function ChoiceCard() {
         this.classList.toggle('choice');
         document.querySelector('#sex').style.display = 'none';
     }
-    sleep(1).then(() => {
+    sleep(4000).then(() => {
         this.style.display = 'none';
     });
-    sleep(1).then(() => {
+    sleep(4000).then(() => {
         NewCards('New cards', id)
     });
 }
