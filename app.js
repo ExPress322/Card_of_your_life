@@ -139,8 +139,9 @@ cards.forEach(card => card.addEventListener('click', ChoiceCard));
 
 
 function Check() {
-    let nColoda = getRandomInt(1) + 1
-    let nCard = getRandomInt(9) + 1
+    console.log('random card')
+    // let nColoda = getRandomInt(1) + 1;
+    let nCard = getRandomInt(9) + 1;
     
     const cardsFull = document.querySelectorAll('.card');
     cardsFull.forEach(card => card.style.display = 'none');
