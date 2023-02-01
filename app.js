@@ -45,6 +45,9 @@ const CardInfo = {
     }
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }  
 
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -135,7 +138,26 @@ cards.forEach(card => card.addEventListener('click', ChoiceCard));
 
 
 
-// function Check() {
-//     console.log('checking...');
-// }
-// btn.addEventListener('click', Check);
+function Check() {
+    let nColoda = getRandomInt(1) + 1
+    let nCard = getRandomInt(9) + 1
+    
+    const cardsFull = document.querySelectorAll('.card');
+    cardsFull.forEach(card => card.style.display = 'none');
+
+    const card = document.createElement('div');
+        card.className = 'full-card-info'
+        card.style.border = '3px solid black'
+        card.style.height = '350px'
+        card.style.width = '500px'
+        card.textContent = CardInfo.sex[nCard].info
+        card.style.display = 'flex'
+        card.style.justifyContent = 'center'
+        card.style.alignItems =  'center';
+        card.style.backgroundColor = 'rgb(100, 190, 190)'
+
+        const $container = document.querySelector('.container');
+
+        $container.appendChild(card);
+}
+btn.addEventListener('click', Check);
